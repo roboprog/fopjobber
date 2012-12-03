@@ -1,0 +1,7 @@
+<project name="fopjobber" default="compile" basedir=".">
+	<target name="compile">
+	<!-- TODO: set up groovy.classpath -->
+	<taskdef name="groovyc" classname="org.codehaus.groovy.ant.Groovyc"
+			classpathref="groovy.classpath"/>
+	</target>
+</project>
