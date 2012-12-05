@@ -5,15 +5,8 @@
 		<taskdef name="groovyc" classname="org.codehaus.groovy.ant.Groovyc"
 				classpath="${env.GROOVY_HOME}/embeddable/groovy-all-1.8.6.jar" />
 		<mkdir dir="classes" />
-		<groovyc srcdir="src" destdir="classes">
-		</groovyc>
-		<!-- 
-		<exec executable="${env.GROOVY_HOME}/bin/groovyc">
-			<arg value="- -sourcepath" />
-			<arg value="src" />
-			<arg value="-d" />
-			<arg value="classes" />
-		</exec>
-		-->
+		<groovyc srcdir="src" destdir="classes" />
+		<!-- TODO:  separate demo code more -->
+		<groovyc srcdir="demo/src" destdir="classes" classpath="classes" />
 	</target>
 </project>
