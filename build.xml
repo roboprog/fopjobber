@@ -9,4 +9,11 @@
 		<!-- TODO:  separate demo code more -->
 		<groovyc srcdir="demo/src" destdir="classes" classpath="classes" />
 	</target>
+	<target name="run_basic_page">
+		<!-- TODO:  classpath and java task (I *so* miss make) -->
+		<exec executable="/bin/sh">
+			<arg value="-c" />
+			<arg value="java -classpath &quot;classes:$GROOVY_HOME/embeddable/groovy-all-1.8.6.jar&quot; com.roboprogs.fopjobber.demo.BasicPage" />
+		</exec>
+	</target>
 </project>
