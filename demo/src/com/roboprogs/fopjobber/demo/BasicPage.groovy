@@ -6,7 +6,8 @@ outf = new File( "test_output/basic_page.fo.xml")
 // <?xml version="1.0" encoding="ISO-8859-1"?>
 outf.write """
 
-<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format"
+		xmlns:afp="http://org.apache.fop/extensions/afp" >
 
 <fo:layout-master-set>
 	<fo:simple-page-master page-height="11in" page-width="8.5in"
@@ -25,13 +26,18 @@ outf.write """
 				reference-orientation="270"/>
 		<fo:region-end background-color="#cccc77" extent=".25in"
 				reference-orientation="90"/>
+
+		<afp:page id="PAG001">
+			<afp:tag-logical-element name="ACCOUNT" value="123-456"/>
+		</afp:page>
+
 	</fo:simple-page-master>
 </fo:layout-master-set>
 
 <fo:page-sequence master-reference="BasicPage">
 
 	<fo:static-content flow-name="xsl-region-before">
-		<fo:block font-size="15pt" text-align="center">Document Title</fo:block>
+		<fo:block id="PAG001" font-size="15pt" text-align="center">Document Title</fo:block>
 	</fo:static-content>
 	<fo:static-content flow-name="xsl-region-after">
 		<fo:block font-family="sans-serif" font-size="8pt" text-align="right">page footer</fo:block>
