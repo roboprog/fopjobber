@@ -10,6 +10,7 @@
 		<groovyc srcdir="demo/src" destdir="classes" classpath="classes" />
 	</target>
 	<target name="run_basic_page">
+		<mkdir dir="test_output" />
 		<!-- TODO:  classpath and java task (I *so* miss make) -->
 		<exec executable="/bin/sh">
 			<arg value="-c" />
